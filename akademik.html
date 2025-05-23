@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akademik</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/slideshow.css">
+</head>
+<body style="background-color: aqua;">
+    <div>
+        <ul style="list-style-type: none">
+            <li><a class="navigasi" href="index.html">Home</a></li>
+            <li><a class="navigasi" href="perkenalan.html">Perkenalan</a></li>
+            <li><a class="navigasi" href="medsos.html">Medsos</a></li>
+        </ul>
+    </div>
+<div class="slider-container">
+  <div class="slider-track" id="sliderTrack">
+    <div class="slide">
+        <img src="image/sdn110.png" alt="Slide 1">
+    </div>
+    <div class="slide">
+        <img src="image/mtsmu.png" alt="Slide 2">
+    </div>
+    <div class="slide">
+        <img src="image/smkmu.jpg" alt="Slide 3">
+    </div>
+    <div class="slide">
+        <img src="image/uinstsjbi.png" alt="Slide 3">
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">❮</button>
+    <button onclick="nextSlide()">❯</button>
+  </div>
+</div>
+
+  <div class="cardisi p2">
+    <p>
+        <b>2012-2017</b>
+        <p>
+            SDN 110/IV Kota Jambi
+        </p>
+    </p>
+  </div>
+    <div class="cardisi p2">
+        <p>
+            <b>2018-2020</b>
+            <p>
+                MTS Mambaul Ulum Kota Jambi
+            </p>
+        </p>
+    </div>
+    <div class="cardisi p2" >
+        <p>
+            <b>2021-2023</b>
+            <p>
+                SMK Mambaul Ulum Kota Jambi
+            </p>
+        </p>
+    </div>
+    <div class="cardisi p2">
+        <p>
+            <b>2024-Sekarang</b>
+            <p>
+                Universitas Islam Negeri Sulthan Thaha Saifuddin Jambi
+            </p>
+        </p>
+    </div>
+
+
+<script>
+  const track = document.getElementById("sliderTrack");
+  const totalSlides = document.querySelectorAll(".slide").length;
+  let currentIndex = 0;
+
+  function updateSlide() {
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    updateSlide();
+  }
+
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    updateSlide();
+  }
+
+  setInterval(nextSlide, 3000); // Auto slide every 3 seconds
+</script>
+</body>
+</html>
